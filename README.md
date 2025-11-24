@@ -1,4 +1,4 @@
-- **GitHub Repository**: [FPL Decision Intelligence Platform](https://github.com/JesseOnu/FPL-Decision-Intelligence-Platform)
+
 - **Live Dashboard**: [View on Power BI](https://app.powerbi.com/view?r=eyJrIjoiMzAxYTMzZDctNDMzMy00YjJiLWFkZTAtMTY0MGI3YjYwNWRiIiwidCI6ImQxMjA2OTQzLWJmY2MtNGM3NC04MmQ0LTA1ZTYzYTQzMzViZiJ9)
 # FPL-Decision-Intelligence-Platform
 End to end analytics solution combining Python ETL, Power BI visualization, and DAX-powered predictive modelling for Fantasy Premier League optimization
