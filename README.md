@@ -1,5 +1,3 @@
-
-- **Live Dashboard**: [View on Power BI](https://app.powerbi.com/view?r=eyJrIjoiMzAxYTMzZDctNDMzMy00YjJiLWFkZTAtMTY0MGI3YjYwNWRiIiwidCI6ImQxMjA2OTQzLWJmY2MtNGM3NC04MmQ0LTA1ZTYzYTQzMzViZiJ9)
 # FPL-Decision-Intelligence-Platform
 End to end analytics solution combining Python ETL, Power BI visualization, and DAX-powered predictive modelling for Fantasy Premier League optimization
 **Status:** 🚧 Active Development
@@ -7,6 +5,7 @@ End to end analytics solution combining Python ETL, Power BI visualization, and 
 - **Visualization:** Power BI Desktop
 - **Analysis:** DAX, Power Query (M)
 - **Data Source:** FPL Official API + (https://github.com/vaastav/Fantasy-Premier-League)
+- **Live Dashboard**: [View on Power BI](https://app.powerbi.com/view?r=eyJrIjoiMzAxYTMzZDctNDMzMy00YjJiLWFkZTAtMTY0MGI3YjYwNWRiIiwidCI6ImQxMjA2OTQzLWJmY2MtNGM3NC04MmQ0LTA1ZTYzYTQzMzViZiJ9)
 
 ## Key Features
 - Developed captain recommendation algorithm incorporating weighted performance metrics
