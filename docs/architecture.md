@@ -2,13 +2,13 @@
 
 ## Project Purpose
 
-The FPL Decision Intelligence Platform is an end-to-end analytics solution that processes Fantasy Premier League data and delivers actionable insights through interactive Power BI visualizations. The system ingests data from the official FPL API, applies advanced feature engineering and validation logic, and surfaces predictive recommendations—particularly for captain selection optimization.
+The FPL Decision Intelligence Platform is an end-to-end analytics solution that processes Fantasy Premier League data and delivers actionable insights through interactive Power BI visualizations. The system ingests data from the official FPL API, applies advanced feature engineering and validation logic, and surfaces predictive recommendations particularly for captaincy selection optimization.
 
 ## Data Flow
 
 ### Stage 1: Historical Data (Gameweeks 1-5/6)
 
-Data for the first 5-6 gameweeks of each season comes from the [vaastav Fantasy-Premier-League GitHub repository](https://github.com/vaastav/Fantasy-Premier-League). Initially, I used the pre-merged `merged_gw.csv` files, but discovered significant data quality issues—particularly empty fields after gameweek 20. To address this, I built a Python script (`FootballFPLFinal.py`) that extracts individual gameweek files from the repository and `mergingGameweeks.py` to combine them seasonally based on filename prefixes, ensuring data integrity across all three seasons.
+Data for the first 5-6 gameweeks of each season comes from the [vaastav Fantasy-Premier-League GitHub repository](https://github.com/vaastav/Fantasy-Premier-League). Initially, I used the pre-merged `merged_gw.csv` files, but discovered significant data quality issues particularly empty fields after gameweek 20. To address this, I built a Python script (`FootballFPLFinal.py`) that extracts individual gameweek files from the repository and `mergingGameweeks.py` to combine them seasonally based on filename prefixes, ensuring data integrity across all three seasons.
 
 ### Stage 2: Live Data (Gameweeks 6+)
 
