@@ -92,7 +92,7 @@ RETURN
 
 ### Purpose
 
-This is your headline measure—a composite score that ranks players by their likelihood to return high points. It combines form, underlying metrics, fixture difficulty, and playing time into a single number. Higher scores indicate better captain picks.
+A composite score that ranks players by their likelihood to return high points. It combines form, underlying metrics, fixture difficulty, and playing time into a single number. Higher scores indicate better captain picks.
 
 ### How It Works
 
@@ -200,7 +200,7 @@ The `POWER(BaseForm, 1.2)` slightly exaggerates differences in form. A player wi
 
 ### Purpose
 
-This is your headline measure—a composite score that ranks players by their likelihood to return high points. It combines form, underlying metrics, fixture difficulty, and playing time into a single number. Higher scores indicate better captain picks.
+A composite score that ranks players by their likelihood to return high points. It combines form, underlying metrics, fixture difficulty, and playing time into a single number. Higher scores indicate better captain picks.
 
 ### How It Works
 
@@ -963,7 +963,7 @@ RETURN
 
 **Why Weight Past Form More Heavily:**
 
-Notice xGI uses 2x for last 3 weeks but 6x for season average. This seems backwards at first, but it's intentional. Season averages are more stable and predictive, so they get higher weight. Recent form is noisy and can vary week to week.
+xGI uses 2x for last 3 weeks but 6x for season average. I chose this because season averages are more stable and predictive, so they get higher weight. Recent form is noisy and can vary week to week.
 
 
 
