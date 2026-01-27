@@ -1,0 +1,87 @@
+import requests
+import pandas as pd
+from tqdm import tqdm
+import time
+import os
+
+# Configuration
+SEASON = "2025-26"  # Change if you want to track a different season
+OUTPUT_FILE = r"C:\Users\JesseOnu\Downloads\fpl_historicalavailability.csv"
+DELAY_BETWEEN_CALLS = 0.5  # seconds - helps avoid rate limiting
+
+def get_bootstrap_data():
+    url = "https://fantasy.premierleague.com/api/bootstrap-static/"
+    response = requests.get(url)
+    response.raise_for_status()
+    return response.json()
+
+def get_current_gameweek(events):
+    current = next((e for e in events if e["is_current"]), None)
+    return current["id"] if current else None
+
+def get_player_history(player_id):
+    url = f"https://fantasy.premierleague.com/api/element-summary/{player_id}/"
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        return response.json()["history"]
+    except Exception as e:
+        print(f"Error fetching history for player {player_id}: {e}")
+        return []
+
+def main():
+    print("Fetching bootstrap data...")
+    bootstrap = get_bootstrap_data()
+    
+    # Basic player info
+    players_df = pd.DataFrame(bootstrap["elements"])
+    players_df = players_df[["id", "web_name", "team", "element_type", "status"]]
+    players_df.rename(columns={"id": "element"}, inplace=True)
+    
+    # Current gameweek (just for reference)
+    current_gw = get_current_gameweek(bootstrap["events"])
+    print(f"Current gameweek: {current_gw}")
+    
+    # Collect all historical data
+    all_history = []
+    
+    print("Fetching player histories (this may take 5-15 minutes)...")
+    for _, player in tqdm(players_df.iterrows(), total=len(players_df)):
+        player_id = player["element"]
+        history = get_player_history(player_id)
+        
+        for entry in history:
+            all_history.append({
+                "element": player_id,
+                "round": entry["round"],
+                "season": SEASON,
+                "web_name": player["web_name"],
+                "minutes": entry["minutes"],
+                "was_available": entry["minutes"] > 0,
+                # You can add more fields from the history entry if needed
+            })
+        
+        time.sleep(DELAY_BETWEEN_CALLS)  # Be nice to the API
+    
+    # Convert to DataFrame
+    df = pd.DataFrame(all_history)
+    
+    # Reorder columns for clarity
+    column_order = [
+        "element", "round", "season", "web_name", 
+        "was_available", "minutes"
+    ]
+    df = df[column_order]
+    
+    # Sort by player and gameweek
+    df.sort_values(["element", "round"], inplace=True)
+    
+    # Save to CSV
+    df.to_csv(OUTPUT_FILE, index=False)
+    print(f"\nDone! Historical availability table saved to '{OUTPUT_FILE}'")
+    print(f"Total rows: {len(df):,}")
+    print(f"Unique players: {df['element'].nunique():,}")
+    print(f"Gameweeks covered: {df['round'].min()} to {df['round'].max()}")
+
+if __name__ == "__main__":
+    main()
