@@ -10,8 +10,7 @@ End to end analytics solution combining Python ETL, Power BI visualization, and 
 - FPL managers often require multiple different sources in order to acquire all the relevant data they need to make well informed data driven decisions on team selection on a weekly basis. This project aims to be a centralised hub where managers can get all information they need to plan transfers via an interactive easy to use dashboard.
 
   
-<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/qQPff9dgaFuEX9HdpQ" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/qQPff9dgaFuEX9HdpQ">via GIPHY</a></p>
-
+<img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2R6bHZuNW9vdW55dngyNmtzOGExMXd2OGdzYXIzZWUzMTEzaGI2dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qQPff9dgaFuEX9HdpQ/giphy.gif" alt="Dashboard Walkthrough" style="max-width: 900px; width: 100%;">
 
 
 ## Key Features
