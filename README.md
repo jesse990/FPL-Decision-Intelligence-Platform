@@ -10,9 +10,9 @@ End to end analytics solution combining Python ETL, Power BI visualization, and 
 - FPL managers often require multiple different sources in order to acquire all the relevant data they need to make well informed data driven decisions on team selection on a weekly basis. This project aims to be a centralised hub where managers can get all information they need to plan transfers via an interactive easy to use dashboard.
 
   
-!<img src="AdobeExpress-fplpart1.gif" alt="Dashboard Walkthrough" width="800">
+<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/qQPff9dgaFuEX9HdpQ" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/qQPff9dgaFuEX9HdpQ">via GIPHY</a></p>
 
-!<img src="AdobeExpress-fplpart2.gif" alt="Dashboard Walkthrough" width="800">
+
 
 ## Key Features
 - Developed captain recommendation algorithm incorporating weighted performance metrics
