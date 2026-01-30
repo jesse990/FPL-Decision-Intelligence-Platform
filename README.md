@@ -6,11 +6,16 @@ End to end analytics solution combining Python ETL, Power BI visualization, and 
 - **Analysis:** DAX, Power Query (M)
 - **Data Source:** FPL Official API + (https://github.com/vaastav/Fantasy-Premier-League)
 - **Live Dashboard**: [View on Power BI](https://app.powerbi.com/view?r=eyJrIjoiMzAxYTMzZDctNDMzMy00YjJiLWFkZTAtMTY0MGI3YjYwNWRiIiwidCI6ImQxMjA2OTQzLWJmY2MtNGM3NC04MmQ0LTA1ZTYzYTQzMzViZiJ9)
+## Project Motivations
+- FPL managers often require multiple different sources in order to acquire all the relevant data they need to make well informed data driven decisions on team selection on a weekly basis. This project aims to be a centralised hub where managers can get all information they need to plan transfers via an interactive easy to use dashboard.
+
 
 ## Key Features
 - Developed captain recommendation algorithm incorporating weighted performance metrics
 - Built validation framework to track recommendation accuracy against actual gameweek outcomes
 - Enabled retrospective analysis of prediction patterns and model performance
+- Dynamic fixture difficulty analysis for strategic planning
+- Player comparison tools
 
 ## Key Challenges Solved
 
@@ -29,3 +34,10 @@ End to end analytics solution combining Python ETL, Power BI visualization, and 
 - Original GitHub repository stopped updating at Gameweek 6
 - Leveraged AI tools to rapidly develop Python script for direct FPL API extraction  
 - Implemented automated weekly data refresh process to maintain current data
+
+**Areas For Improvements**
+- Push power query transformations as far back upstream as possible / potentially rework the entire datamodel. Ideally I would like to pull historical data from the api on a  player level using python, then using a direct script via an api web connection in powerquery for updating current data. Some of the problems I anticipate to encounter with this approach is standardising player ids. The api has an ‘element’ identifier but this is season specific, if there is a global player id / code available that would make this possible however its difficult to determine as there's no documentation but i will explore this further.
+- This initially started as a learning project but developed more and more over time. If i was to redo i would outline the requirements as early as possible and build everything around those requirements.
+
+- Separate bigger measures into smaller ones. This would allow for a more efficient data model and thus simpler measures
+
